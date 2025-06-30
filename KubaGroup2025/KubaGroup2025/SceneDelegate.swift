@@ -19,10 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
 
-        let viewModel = SearchViewModel(with: AppDelegate.shared.iTunesMusicService)
+        let viewModel = SearchViewModel(with: AppDelegate.shared.musicService)
         let rootNavigationConrtoller = UINavigationController(rootViewController: SearchViewController(with: viewModel))
         AppDelegate.shared.appCoordinator = AppCoordinator(navigationController: rootNavigationConrtoller,
-                                                           iTunesMusicService: AppDelegate.shared.iTunesMusicService)
+                                                           musicService: AppDelegate.shared.musicService)
 
         window?.rootViewController = rootNavigationConrtoller
         window?.makeKeyAndVisible()

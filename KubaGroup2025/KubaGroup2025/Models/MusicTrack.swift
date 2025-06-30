@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct MusicTrack {
-    let artistName: String
-    let artworkUrl: URL
-    let description: String
-    let releaseDate: Date
-    let title: String
+protocol MusicTrack {
+    var artistName: String { get }
+    var artworkUrl: URL { get }
+    var description: String { get }
+    var releaseYear: String { get }
+    var title: String { get }
 }

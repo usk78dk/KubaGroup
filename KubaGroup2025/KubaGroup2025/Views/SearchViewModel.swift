@@ -11,7 +11,7 @@ class SearchViewModel {
 
     // MARK: - Private Properties
 
-    private let iTunesMusicService: BaseService
+    private let musicService: MusicService
 
     // MARK: - Public Properties
 
@@ -19,13 +19,15 @@ class SearchViewModel {
 
     // MARK: - Life Cycle
 
-   init(with iTunesMusicService: ITunesMusicService) {
-        self.iTunesMusicService = iTunesMusicService
+   init(with musicService: MusicService) {
+        self.musicService = musicService
     }
 
     // MARK: - Search
 
-    func updateSearchString(_ searchString: String) {
+    func updateSearchString(_ searchString: String) async {
+
+        currentSearchResult = await self.musicService.searchForTracks(searchString)
 
     }
 }

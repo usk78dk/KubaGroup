@@ -5,21 +5,30 @@
 //  Created by Ulrik Skov-Lorentzen on 30/06/2025.
 //
 
-protocol BaseService {
+protocol MusicService {
+    func searchForTracks(_ searchQuery: String) async -> [MusicTrack]
 }
 
-final class ITunesMusicService: BaseService {
+final class ITunesMusicService: MusicService {
 
     // MARK: - Private Properties
 
-    private let iTunesMusicRepository: BaseRepository
+    private let musicRepository: MusicRepository
 
     // MARK: - Initialization
 
-    init(iTunesMusicRepository: BaseRepository = ITunesMusicRepository()) {
-        self.iTunesMusicRepository = iTunesMusicRepository
+    init(musicRepository: MusicRepository = ITunesMusicRepository()) {
+        self.musicRepository = musicRepository
     }
 
     // MARK: - Public Methods
 
+    func searchForTracks(_ searchQuery: String) async -> [MusicTrack] {
+        do {
+            return try await musicRepository.searchForTracks(searchQuery)
+        } catch {
+            debugPrint(error.localizedDescription)
+            return []
+        }
+    }
 }

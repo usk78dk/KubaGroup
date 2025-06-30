@@ -78,7 +78,13 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.updateSearchString(searchText)
+        Task {
+            await viewModel.updateSearchString(searchText)
+            await MainActor.run {
+                self.musicTrackTableView.reloadData()
+            }
+        }
+
     }
 }
 

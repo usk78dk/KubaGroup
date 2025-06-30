@@ -12,19 +12,19 @@ class AppCoordinator {
     // MARK: - Properties
 
     private let navigationController: UINavigationController
-    private let iTunesMusicService: BaseService
+    private let musicService: MusicService
 
     // MARK: - Initialization
 
-    init(navigationController: UINavigationController, iTunesMusicService: BaseService) {
+    init(navigationController: UINavigationController, musicService: MusicService) {
         self.navigationController = navigationController
-        self.iTunesMusicService = iTunesMusicService
+        self.musicService = musicService
     }
 
     // MARK: - Navigation
 
     func musicTrackSelected(musicTrack: MusicTrack) {
-        // Navigation etc. would be controlled here.
+        // Navigation, playback etc. would be controlled here.
     }
 
 }

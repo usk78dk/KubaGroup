@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Public Properties
 
     var appCoordinator: AppCoordinator?
-    let iTunesMusicService = ITunesMusicService()
+    let musicService = ITunesMusicService()
 
     // MARK: - Computed Properties
 
