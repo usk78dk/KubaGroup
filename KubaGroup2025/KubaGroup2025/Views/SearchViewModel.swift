@@ -15,11 +15,12 @@ class SearchViewModel {
 
     // MARK: - Public Properties
 
-    var currentSearchResult: [MusicTrack]?
+    var currentSearchedTracks: [MusicTrack]?
+    var searchMessage: String?
 
     // MARK: - Life Cycle
 
-   init(with musicService: MusicService) {
+    init(with musicService: MusicService) {
         self.musicService = musicService
     }
 
@@ -27,7 +28,9 @@ class SearchViewModel {
 
     func updateSearchString(_ searchString: String) async {
 
-        currentSearchResult = await self.musicService.searchForTracks(searchString)
-
+        let searchResult = await self.musicService.searchForTracks(searchString)
+        currentSearchedTracks = searchResult.tracks
+        searchMessage = searchResult.message
     }
+
 }

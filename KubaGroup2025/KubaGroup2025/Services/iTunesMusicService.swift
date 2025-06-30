@@ -6,7 +6,7 @@
 //
 
 protocol MusicService {
-    func searchForTracks(_ searchQuery: String) async -> [MusicTrack]
+    func searchForTracks(_ searchQuery: String) async -> (tracks: [MusicTrack], message: String?)
 }
 
 final class ITunesMusicService: MusicService {
@@ -23,12 +23,16 @@ final class ITunesMusicService: MusicService {
 
     // MARK: - Public Methods
 
-    func searchForTracks(_ searchQuery: String) async -> [MusicTrack] {
+    func searchForTracks(_ searchQuery: String) async -> (tracks: [MusicTrack], message: String?) {
+        guard searchQuery.count > 1 else { return (tracks: [], message: "Need to enter at least 2 characters") }
+
         do {
-            return try await musicRepository.searchForTracks(searchQuery)
+            let tracks = try await musicRepository.searchForTracks(searchQuery)
+
+            return (tracks, message: tracks.count == 0 ? "No tracks found" : nil)
         } catch {
             debugPrint(error.localizedDescription)
-            return []
+            return (tracks: [], message: error.localizedDescription)
         }
     }
 }

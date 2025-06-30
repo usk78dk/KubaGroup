@@ -9,7 +9,7 @@ import Foundation
 
 protocol MusicTrack {
     var artistName: String { get }
-    var artworkUrl: URL { get }
+    var artworkUrl: URL? { get }
     var description: String { get }
     var releaseYear: String { get }
     var title: String { get }
