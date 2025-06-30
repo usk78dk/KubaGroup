@@ -21,4 +21,10 @@ class AppCoordinator {
         self.iTunesMusicService = iTunesMusicService
     }
 
+    // MARK: - Navigation
+
+    func musicTrackSelected(musicTrack: MusicTrack) {
+        // Navigation etc. would be controlled here.
+    }
+
 }

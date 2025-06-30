@@ -17,6 +17,8 @@
 		56990EAC2E1284C40049F782 /* iTunesMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAB2E1284C40049F782 /* iTunesMusicService.swift */; };
 		56990EAE2E12851B0049F782 /* iTunesMusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAD2E12851B0049F782 /* iTunesMusicRepository.swift */; };
 		56990EB12E12884C0049F782 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB02E12884C0049F782 /* SearchViewModel.swift */; };
+		56990EB62E128BAB0049F782 /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB52E128BAB0049F782 /* MusicTrack.swift */; };
+		56990EB82E128EA30049F782 /* MusicTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		56990EAB2E1284C40049F782 /* iTunesMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMusicService.swift; sourceTree = "<group>"; };
 		56990EAD2E12851B0049F782 /* iTunesMusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMusicRepository.swift; sourceTree = "<group>"; };
 		56990EB02E12884C0049F782 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		56990EB52E128BAB0049F782 /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
+		56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,11 @@
 		56990E932E1282B20049F782 /* KubaGroup2025 */ = {
 			isa = PBXGroup;
 			children = (
-				56990EAA2E1284B00049F782 /* Services */,
 				56990EA82E1284690049F782 /* AppCoordinator.swift */,
 				56990E942E1282B20049F782 /* AppDelegate.swift */,
 				56990E962E1282B20049F782 /* SceneDelegate.swift */,
+				56990EB42E128B8D0049F782 /* Models */,
+				56990EAA2E1284B00049F782 /* Services */,
 				56990EAF2E1288390049F782 /* Views */,
 				56990E9A2E1282B20049F782 /* Main.storyboard */,
 				56990E9D2E1282BA0049F782 /* Assets.xcassets */,
@@ -91,8 +96,17 @@
 			children = (
 				56990E982E1282B20049F782 /* SearchViewController.swift */,
 				56990EB02E12884C0049F782 /* SearchViewModel.swift */,
+				56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		56990EB42E128B8D0049F782 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56990EB52E128BAB0049F782 /* MusicTrack.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56990EB82E128EA30049F782 /* MusicTrackTableViewCell.swift in Sources */,
 				56990EA92E1284690049F782 /* AppCoordinator.swift in Sources */,
 				56990EB12E12884C0049F782 /* SearchViewModel.swift in Sources */,
 				56990E992E1282B20049F782 /* SearchViewController.swift in Sources */,
@@ -173,6 +188,7 @@
 				56990E972E1282B20049F782 /* SceneDelegate.swift in Sources */,
 				56990EAC2E1284C40049F782 /* iTunesMusicService.swift in Sources */,
 				56990EAE2E12851B0049F782 /* iTunesMusicRepository.swift in Sources */,
+				56990EB62E128BAB0049F782 /* MusicTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

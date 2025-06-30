@@ -10,3 +10,4 @@ I added a repository, to have a centralised place to keep the API calls etc.. Th
 Also added the a service, where business logic and error handling should be - again so it's easy to test out other services and you just change the service in the AppDelegate. 
 
 
+The search bar could have been implemented as a navigation item or the view controller as a UISearchContainerViewController, which might have been more obvious. However, for the sake of the task I thought it showed more to implement it this way.
