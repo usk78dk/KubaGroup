@@ -1,5 +1,5 @@
 //
-//  iTunesMusicService.swift
+//  ITunesMusicService.swift
 //  KubaGroup2025
 //
 //  Created by Ulrik Skov-Lorentzen on 30/06/2025.

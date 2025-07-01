@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,15 +14,29 @@
 		56990E9E2E1282BA0049F782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56990E9D2E1282BA0049F782 /* Assets.xcassets */; };
 		56990EA12E1282BA0049F782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56990E9F2E1282BA0049F782 /* LaunchScreen.storyboard */; };
 		56990EA92E1284690049F782 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EA82E1284690049F782 /* AppCoordinator.swift */; };
-		56990EAC2E1284C40049F782 /* iTunesMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAB2E1284C40049F782 /* iTunesMusicService.swift */; };
-		56990EAE2E12851B0049F782 /* iTunesMusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAD2E12851B0049F782 /* iTunesMusicRepository.swift */; };
+		56990EAC2E1284C40049F782 /* ITunesMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAB2E1284C40049F782 /* ITunesMusicService.swift */; };
+		56990EAE2E12851B0049F782 /* ITunesMusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAD2E12851B0049F782 /* ITunesMusicRepository.swift */; };
 		56990EB12E12884C0049F782 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB02E12884C0049F782 /* SearchViewModel.swift */; };
 		56990EB62E128BAB0049F782 /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB52E128BAB0049F782 /* MusicTrack.swift */; };
 		56990EB82E128EA30049F782 /* MusicTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */; };
 		56990EBA2E12CA5C0049F782 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB92E12CA5C0049F782 /* String+extension.swift */; };
 		56990EBC2E12CF820049F782 /* ITunesMusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EBB2E12CF820049F782 /* ITunesMusicTrack.swift */; };
 		56990EBF2E13DDFB0049F782 /* AsyncSetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EBE2E13DDFB0049F782 /* AsyncSetImageView.swift */; };
+		56A088782E148B91004E92CC /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB52E128BAB0049F782 /* MusicTrack.swift */; };
+		56A088792E148B97004E92CC /* ITunesMusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EBB2E12CF820049F782 /* ITunesMusicTrack.swift */; };
+		56A0887A2E148BAE004E92CC /* ITunesMusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAD2E12851B0049F782 /* ITunesMusicRepository.swift */; };
+		56A0887E2E148C95004E92CC /* ITunesMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EAB2E1284C40049F782 /* ITunesMusicService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56A0886D2E148986004E92CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56990E892E1282B20049F782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56990E902E1282B20049F782;
+			remoteInfo = KubaGroup2025;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		56990E912E1282B20049F782 /* KubaGroup2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KubaGroup2025.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,18 +48,30 @@
 		56990EA02E1282BA0049F782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56990EA22E1282BA0049F782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56990EA82E1284690049F782 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		56990EAB2E1284C40049F782 /* iTunesMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMusicService.swift; sourceTree = "<group>"; };
-		56990EAD2E12851B0049F782 /* iTunesMusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMusicRepository.swift; sourceTree = "<group>"; };
+		56990EAB2E1284C40049F782 /* ITunesMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicService.swift; sourceTree = "<group>"; };
+		56990EAD2E12851B0049F782 /* ITunesMusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicRepository.swift; sourceTree = "<group>"; };
 		56990EB02E12884C0049F782 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		56990EB52E128BAB0049F782 /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
 		56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackTableViewCell.swift; sourceTree = "<group>"; };
 		56990EB92E12CA5C0049F782 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		56990EBB2E12CF820049F782 /* ITunesMusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicTrack.swift; sourceTree = "<group>"; };
 		56990EBE2E13DDFB0049F782 /* AsyncSetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncSetImageView.swift; sourceTree = "<group>"; };
+		56A088692E148986004E92CC /* KubaGroup2025Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KubaGroup2025Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		56A0886A2E148986004E92CC /* KubaGroup2025Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = KubaGroup2025Tests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		56990E8E2E1282B20049F782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A088662E148986004E92CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				56990E932E1282B20049F782 /* KubaGroup2025 */,
+				56A0886A2E148986004E92CC /* KubaGroup2025Tests */,
 				56990E922E1282B20049F782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				56990E912E1282B20049F782 /* KubaGroup2025.app */,
+				56A088692E148986004E92CC /* KubaGroup2025Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,8 +120,8 @@
 		56990EAA2E1284B00049F782 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				56990EAB2E1284C40049F782 /* iTunesMusicService.swift */,
-				56990EAD2E12851B0049F782 /* iTunesMusicRepository.swift */,
+				56990EAB2E1284C40049F782 /* ITunesMusicService.swift */,
+				56990EAD2E12851B0049F782 /* ITunesMusicRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -138,6 +166,29 @@
 			productReference = 56990E912E1282B20049F782 /* KubaGroup2025.app */;
 			productType = "com.apple.product-type.application";
 		};
+		56A088682E148986004E92CC /* KubaGroup2025Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56A088712E148986004E92CC /* Build configuration list for PBXNativeTarget "KubaGroup2025Tests" */;
+			buildPhases = (
+				56A088652E148986004E92CC /* Sources */,
+				56A088662E148986004E92CC /* Frameworks */,
+				56A088672E148986004E92CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56A0886E2E148986004E92CC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				56A0886A2E148986004E92CC /* KubaGroup2025Tests */,
+			);
+			name = KubaGroup2025Tests;
+			packageProductDependencies = (
+			);
+			productName = KubaGroup2025Tests;
+			productReference = 56A088692E148986004E92CC /* KubaGroup2025Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -145,11 +196,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					56990E902E1282B20049F782 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					56A088682E148986004E92CC = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 56990E902E1282B20049F782;
 					};
 				};
 			};
@@ -167,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				56990E902E1282B20049F782 /* KubaGroup2025 */,
+				56A088682E148986004E92CC /* KubaGroup2025Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -179,6 +235,13 @@
 				56990EA12E1282BA0049F782 /* LaunchScreen.storyboard in Resources */,
 				56990E9E2E1282BA0049F782 /* Assets.xcassets in Resources */,
 				56990E9C2E1282B20049F782 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A088672E148986004E92CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,14 +260,33 @@
 				56990EBC2E12CF820049F782 /* ITunesMusicTrack.swift in Sources */,
 				56990E972E1282B20049F782 /* SceneDelegate.swift in Sources */,
 				56990EBA2E12CA5C0049F782 /* String+extension.swift in Sources */,
-				56990EAC2E1284C40049F782 /* iTunesMusicService.swift in Sources */,
-				56990EAE2E12851B0049F782 /* iTunesMusicRepository.swift in Sources */,
+				56990EAC2E1284C40049F782 /* ITunesMusicService.swift in Sources */,
+				56990EAE2E12851B0049F782 /* ITunesMusicRepository.swift in Sources */,
 				56990EBF2E13DDFB0049F782 /* AsyncSetImageView.swift in Sources */,
 				56990EB62E128BAB0049F782 /* MusicTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56A088652E148986004E92CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56A088782E148B91004E92CC /* MusicTrack.swift in Sources */,
+				56A088792E148B97004E92CC /* ITunesMusicTrack.swift in Sources */,
+				56A0887E2E148C95004E92CC /* ITunesMusicService.swift in Sources */,
+				56A0887A2E148BAE004E92CC /* ITunesMusicRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56A0886E2E148986004E92CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56990E902E1282B20049F782 /* KubaGroup2025 */;
+			targetProxy = 56A0886D2E148986004E92CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		56990E9A2E1282B20049F782 /* Main.storyboard */ = {
@@ -401,6 +483,46 @@
 			};
 			name = Release;
 		};
+		56A0886F2E148986004E92CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QF5JHNXZK7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.KubaGroup2025Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KubaGroup2025.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KubaGroup2025";
+			};
+			name = Debug;
+		};
+		56A088702E148986004E92CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QF5JHNXZK7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.KubaGroup2025Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KubaGroup2025.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KubaGroup2025";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,6 +540,15 @@
 			buildConfigurations = (
 				56990EA62E1282BA0049F782 /* Debug */,
 				56990EA72E1282BA0049F782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56A088712E148986004E92CC /* Build configuration list for PBXNativeTarget "KubaGroup2025Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A0886F2E148986004E92CC /* Debug */,
+				56A088702E148986004E92CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -177,8 +177,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MusicTrackTableViewCell.cellIdentifier, for: indexPath) as? MusicTrackTableViewCell,
-              (viewModel.currentSearchedTracks?.indices.contains(indexPath.row)) != nil,
+        guard viewModel.currentSearchedTracks?.indices.contains(indexPath.row) != nil,
+              let cell = tableView.dequeueReusableCell(withIdentifier: MusicTrackTableViewCell.cellIdentifier, for: indexPath) as? MusicTrackTableViewCell,
               let musicTrack = viewModel.currentSearchedTracks?[indexPath.row]
             else
         {

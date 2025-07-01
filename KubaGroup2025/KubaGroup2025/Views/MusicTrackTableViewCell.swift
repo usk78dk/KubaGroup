@@ -95,7 +95,6 @@ class MusicTrackTableViewCell: UITableViewCell {
         coverArtHeight.priority = UILayoutPriority(999)
 
         NSLayoutConstraint.activate([
-//            coverArtImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             coverArtImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             coverArtImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             coverArtImageView.widthAnchor.constraint(equalTo: coverArtImageView.heightAnchor),
