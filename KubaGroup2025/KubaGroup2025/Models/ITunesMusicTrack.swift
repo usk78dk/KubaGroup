@@ -10,7 +10,7 @@ import Foundation
 struct ITunesMusicTrack: MusicTrack, Codable {
 
     let artistName: String
-    let artworkUrl: URL?
+    let artworkUrl: String
     let description: String
     let releaseYear: String
     let title: String
@@ -27,7 +27,7 @@ struct ITunesMusicTrack: MusicTrack, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         artistName = try container.decodeIfPresent(String.self, forKey: .artistName) ?? ""
-        artworkUrl = try container.decodeIfPresent(URL.self, forKey: .artworkUrl) ?? URL(string: "")
+        artworkUrl = try container.decodeIfPresent(String.self, forKey: .artworkUrl) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         if let releaseDateString = try container.decodeIfPresent(String.self, forKey: .releaseYear) {
             let dateFormatter = DateFormatter()

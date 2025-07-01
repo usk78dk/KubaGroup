@@ -21,6 +21,7 @@
 		56990EB82E128EA30049F782 /* MusicTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */; };
 		56990EBA2E12CA5C0049F782 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EB92E12CA5C0049F782 /* String+extension.swift */; };
 		56990EBC2E12CF820049F782 /* ITunesMusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EBB2E12CF820049F782 /* ITunesMusicTrack.swift */; };
+		56990EBF2E13DDFB0049F782 /* AsyncSetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56990EBE2E13DDFB0049F782 /* AsyncSetImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackTableViewCell.swift; sourceTree = "<group>"; };
 		56990EB92E12CA5C0049F782 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		56990EBB2E12CF820049F782 /* ITunesMusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicTrack.swift; sourceTree = "<group>"; };
+		56990EBE2E13DDFB0049F782 /* AsyncSetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncSetImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		56990EAF2E1288390049F782 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56990EBE2E13DDFB0049F782 /* AsyncSetImageView.swift */,
 				56990E982E1282B20049F782 /* SearchViewController.swift */,
 				56990EB02E12884C0049F782 /* SearchViewModel.swift */,
 				56990EB72E128EA30049F782 /* MusicTrackTableViewCell.swift */,
@@ -196,6 +199,7 @@
 				56990EBA2E12CA5C0049F782 /* String+extension.swift in Sources */,
 				56990EAC2E1284C40049F782 /* iTunesMusicService.swift in Sources */,
 				56990EAE2E12851B0049F782 /* iTunesMusicRepository.swift in Sources */,
+				56990EBF2E13DDFB0049F782 /* AsyncSetImageView.swift in Sources */,
 				56990EB62E128BAB0049F782 /* MusicTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
