@@ -43,8 +43,11 @@ class SearchViewController: UIViewController {
         let musicTrackTableView = UITableView()
         musicTrackTableView.translatesAutoresizingMaskIntoConstraints = false
         musicTrackTableView.register(MusicTrackTableViewCell.self, forCellReuseIdentifier: MusicTrackTableViewCell.cellIdentifier)
+        musicTrackTableView.keyboardDismissMode = .onDrag
         return musicTrackTableView
     }()
+
+    var labelCenterViewBottomAnchor: NSLayoutConstraint?
 
     // MARK: - life Cycle
 
@@ -55,11 +58,21 @@ class SearchViewController: UIViewController {
 
         setupUI()
         setupConstraints()
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: UI
@@ -79,13 +92,31 @@ class SearchViewController: UIViewController {
         view.addSubview(musicTrackTableView)
     }
 
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            labelCenterViewBottomAnchor?.constant = -(keyboardHeight + 16)
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+        labelCenterViewBottomAnchor?.constant = -16
+        view.layoutIfNeeded()
+    }
+
     private func setupConstraints(){
+        labelCenterViewBottomAnchor = labelCenterView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+
+        guard let labelCenterViewBottomAnchor else { return }
+
         NSLayoutConstraint.activate([
             searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
 
-            labelCenterView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 16),
+            labelCenterViewBottomAnchor,
             labelCenterView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             labelCenterView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
             labelCenterView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
