@@ -17,6 +17,7 @@ class MusicTrackTableViewCell: UITableViewCell {
         let coverArtImageView = AsyncSetImageView()
         coverArtImageView.translatesAutoresizingMaskIntoConstraints = false
         coverArtImageView.contentMode = .scaleAspectFit
+        coverArtImageView.backgroundColor = .lightGray
         return coverArtImageView
     }()
 
@@ -36,6 +37,26 @@ class MusicTrackTableViewCell: UITableViewCell {
         artistLabel.font = artistLabel.font.withSize(14)
         artistLabel.lineBreakMode = .byTruncatingTail
         return artistLabel
+    }()
+
+    let descriptionLabel: UILabel = {
+        let descriptionLabel = UILabel()
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.textColor = .black
+        descriptionLabel.font = descriptionLabel.font.withSize(14)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        return descriptionLabel
+    }()
+
+    let releaseDateLabel: UILabel = {
+        let releaseDateLabel = UILabel()
+        releaseDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        releaseDateLabel.textColor = .black
+        releaseDateLabel.font = releaseDateLabel.font.withSize(10)
+        releaseDateLabel.lineBreakMode = .byTruncatingTail
+        releaseDateLabel.textAlignment = .right
+        return releaseDateLabel
     }()
 
     // MARK: - Life Cycle
@@ -64,15 +85,17 @@ class MusicTrackTableViewCell: UITableViewCell {
         contentView.addSubview(coverArtImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(artistLabel)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(releaseDateLabel)
     }
 
     private func setupConstraints(){
-        // Because of iOS' lruntime layout, we need to lower this constraint to awoid flotting the output with breakin constraints.
+        // Because of iOS' runtime layout, we need to lower this constraints priority to awoid flotting the output with breaking constraints.
         let coverArtHeight = coverArtImageView.heightAnchor.constraint(equalToConstant: 60)
         coverArtHeight.priority = UILayoutPriority(999)
 
         NSLayoutConstraint.activate([
-            coverArtImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+//            coverArtImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             coverArtImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             coverArtImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             coverArtImageView.widthAnchor.constraint(equalTo: coverArtImageView.heightAnchor),
@@ -84,13 +107,24 @@ class MusicTrackTableViewCell: UITableViewCell {
 
             artistLabel.bottomAnchor.constraint(equalTo: coverArtImageView.bottomAnchor, constant: -8),
             artistLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            artistLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: -8)
+            artistLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: -8),
+
+            descriptionLabel.leadingAnchor.constraint(equalTo: coverArtImageView.leadingAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: coverArtImageView.bottomAnchor, constant: 8),
+            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+
+            releaseDateLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
+            releaseDateLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
+            releaseDateLabel.trailingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor),
+            releaseDateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
     }
     // MARK: - View Setup
 
     func configure(with musicTrack: MusicTrack) {
         artistLabel.text = musicTrack.artistName
+        descriptionLabel.text = musicTrack.description
+        releaseDateLabel.text = "Released: " + musicTrack.releaseDate
         titleLabel.text = musicTrack.title
         Task {
             await coverArtImageView.setImage(with: musicTrack.artworkUrl)

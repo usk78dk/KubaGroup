@@ -11,6 +11,6 @@ protocol MusicTrack {
     var artistName: String { get }
     var artworkUrl: String { get }
     var description: String { get }
-    var releaseYear: String { get }
+    var releaseDate: String { get }
     var title: String { get }
 }

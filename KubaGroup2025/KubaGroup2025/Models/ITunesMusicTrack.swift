@@ -12,14 +12,14 @@ struct ITunesMusicTrack: MusicTrack, Codable {
     let artistName: String
     let artworkUrl: String
     let description: String
-    let releaseYear: String
+    let releaseDate: String
     let title: String
 
     enum CodingKeys: String, CodingKey {
         case artistName
         case artworkUrl = "artworkUrl60"
         case description = "collectionName"
-        case releaseYear = "releaseDate"
+        case releaseDate
         case title = "trackName"
     }
 
@@ -29,13 +29,16 @@ struct ITunesMusicTrack: MusicTrack, Codable {
         artistName = try container.decodeIfPresent(String.self, forKey: .artistName) ?? ""
         artworkUrl = try container.decodeIfPresent(String.self, forKey: .artworkUrl) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
-        if let releaseDateString = try container.decodeIfPresent(String.self, forKey: .releaseYear) {
+        if let releaseDateString = try container.decodeIfPresent(String.self, forKey: .releaseDate) {
+            let iTunesdateFormatter = DateFormatter()
+            iTunesdateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            iTunesdateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.dateFormat = "dd.MM.yyyy"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            releaseYear = String(Calendar.current.component(.year, from: dateFormatter.date(from: releaseDateString)!))
+            releaseDate = dateFormatter.string(from: iTunesdateFormatter.date(from: releaseDateString)!)
         } else {
-            releaseYear = "Unknown"
+            releaseDate = "Unknown"
         }
         title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
     }

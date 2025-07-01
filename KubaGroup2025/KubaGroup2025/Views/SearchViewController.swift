@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
         let searchStatusLabel = UILabel()
         searchStatusLabel.translatesAutoresizingMaskIntoConstraints = false
         searchStatusLabel.textAlignment = .center
+        searchStatusLabel.numberOfLines = 0
         searchStatusLabel.lineBreakMode = .byWordWrapping
         return searchStatusLabel
     }()
